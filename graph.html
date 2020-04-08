@@ -42,11 +42,11 @@
 
     <script>
         var url = "https://pomber.github.io/covid19/timeseries.json";
-        var casos, italia, austria, eslovenia, francia, suiza;
+        var casos, italia, bolivia, canada, francia, suiza;
         var marzo = [];
         var marzo_italia = [];
-        var marzo_austria = [];
-        var marzo_eslovenia = [];
+        var marzo_bolivia = [];
+        var marzo_canada = [];
         var marzo_francia = [];
         var marzo_suiza = [];
 
@@ -62,7 +62,7 @@
             }
 
             italia = casos.Italy;
-            austria = casos.Austria;
+            bolivia = casos.Bolivia;
             eslovenia = casos.Slovenia;
             francia = casos.France;
             suiza = casos.Switzerland;
@@ -73,15 +73,15 @@
                 }
             }
 
-            for (let x = 0; x < austria.length; x++) {
-                if (austria[x].date.includes("-3-")) {
-                    marzo_austria.push(austria[x].confirmed);
+            for (let x = 0; x < bolivia.length; x++) {
+                if (bolivia[x].date.includes("-3-")) {
+                    marzo_bolivia.push(bolivia[x].confirmed);
                 }
             }
 
-            for (let x = 0; x < eslovenia.length; x++) {
-                if (eslovenia[x].date.includes("-3-")) {
-                    marzo_eslovenia.push(eslovenia[x].confirmed);
+            for (let x = 0; x < canada.length; x++) {
+                if (canada[x].date.includes("-3-")) {
+                    marzo_eslovenia.push(canada[x].confirmed);
                 }
             }
 
@@ -108,7 +108,7 @@
                         borderWidth: 2,
                         pointRadius: 2,
                         lineTension: 0,
-                        data: marzo_austria
+                        data: marzo_bolivia
                     }, {
                         label: 'Canada',
                         backgroundColor: 'rgba(77,175,74,.1)',
@@ -116,7 +116,7 @@
                         borderWidth: 2,
                         pointRadius: 2,
                         lineTension: 0,
-                        data: marzo_eslovenia
+                        data: marzo_canada
                     }, {
                         label: 'Francia',
                         backgroundColor: 'rgba(55,126,184,.1)',
