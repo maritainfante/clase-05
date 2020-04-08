@@ -32,12 +32,7 @@
     </style>
     <title>DNO037</title>
 </head>
-<html>
-    <head>
-        <title>Mi primera página WEB: texto</title>
-    </head>
-    <p align="center">
-</html>
+
 <body>
 
     <select onchange="if (this.value) window.location.href=this.value">
@@ -92,6 +87,31 @@
 
         function windowResized() {
             resizeCanvas(windowWidth, windowHeight);
+        }
+         }
+
+        function setup() {
+            noLoop(); // Esta función afectará al draw(). No se redibujará, solo se dibujará una vez.
+            createP(url).position(27,18).style('font-size', 12+"px"); // Creo un párrafo cuyo texto es el contenido de la variable url
+            createCanvas(windowWidth, windowHeight).position(0, 0).style('z-index', -1);
+            /*
+                A continuación voy a buscar el nombre Chile en el objeto contenido en la variable casos.
+                Chile se escribe igual en castellano e inglés, no así Japan, Philippines, Russia, etc.
+                El resultado de la búsqueda es lo que asigno como contenido a la variable chilenos.
+            */
+            nicaraguenses = casos.Nicaragua;
+            console.log("Casos confirmados:");
+        }
+         }
+
+            textSize(24);
+            textAlign(CENTER);
+            text("Hasta el día de ayer, había " + nicaraguenses[nicaraguenses.length - 1].confirmed.toLocaleString('es-ES') + " casos confirmados de COVID-19 en Nicaragua.", width / 2, height / 2);
+            /*
+                En la línea de arriba creo un texto dentro del canvas (ya creado en línea 39).
+                Esto NO es lo mismo que crear un párrafo fuera del canvas. 
+                Inspecciona elementos en tu navegador para aclarar la diferencia.
+            */
         }
     </script>
 </body>
